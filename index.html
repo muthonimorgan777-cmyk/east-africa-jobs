@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>East Africa Jobs Agency - Job Placement Services</title>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f8f9fa;
+}
+
+/* Header & Navigation */
+header {
+  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+  color: white;
+  padding: 1rem 0;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+nav {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* Hero Section */
+.hero {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 100px 20px;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.hero h1 {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 20px;
+  margin-bottom: 30px;
+  opacity: 0.95;
+}
+
+.cta-button {
+  background-color: #ff6b6b;
+  color: white;
+  padding: 15px 40px;
+  font-size: 18px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 600;
+}
+
+.cta-button:hover {
+  background-color: #ee5a52;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(255,107,107,0.4);
+}
+
+/* Main Container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Section Styling */
+section {
+  background: white;
+  margin: 30px 0;
+  padding: 40px 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+section h2 {
+  color: #1e3c72;
+  font-size: 32px;
+  margin-bottom: 30px;
+  border-bottom: 3px solid #667eea;
+  padding-bottom: 10px;
+}
+
+section h3 {
+  color: #2a5298;
+  font-size: 22px;
+  margin: 25px 0 15px 0;
+}
+
+/* Description Section */
+.description {
+  font-size: 18px;
+  line-height: 1.8;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+/* Services List */
+.services-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+.services-list li {
+  background: #f8f9fa;
+  padding: 20px;
+  border-radius: 8px;
+  border-left: 4px solid #667eea;
+  transition: all 0.3s ease;
+}
+
+.services-list li:hover {
+  transform: translateX(5px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* Country Buttons */
+.country-section {
+  background: #f8f9fa;
+  padding: 30px;
+  margin: 20px 0;
+  border-radius: 8px;
+}
+
+.country-button {
+  background-color: #2a5298;
+  color: white;
+  padding: 12px 30px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: 600;
+  margin: 10px 0;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+.country-button:hover {
+  background-color: #1e3c72;
+  box-shadow: 0 5px 15px rgba(42,82,152,0.4);
+}
+
+/* Table Styling */
+.table-container {
+  overflow-x: auto;
+  margin: 30px 0;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+table th {
+  background-color: #1e3c72;
+  color: white;
+  padding: 15px;
+  text-align: left;
+  font-weight: 600;
+}
+
+table td {
+  padding: 12px 15px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+table tr:hover {
+  background-color: #f5f5f5;
+}
+
+/* Form Styling */
+form {
+  max-width: 600px;
+  margin: 30px auto;
+  padding: 30px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+}
+
+form label {
+  display: block;
+  margin: 15px 0 5px 0;
+  font-weight: 600;
+  color: #333;
+}
+
+form input,
+form select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 14px;
+  font-family: inherit;
+}
+
+form input:focus,
+form select:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 5px rgba(102, 126, 234, 0.3);
+}
+
+form input[type="submit"] {
+  background-color: #667eea;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 12px;
+  margin-top: 20px;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+form input[type="submit"]:hover {
+  background-color: #5568d3;
+  box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+/* Info Cards */
+.info-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  margin: 30px 0;
+}
+
+.info-card {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.info-card h3 {
+  color: white;
+  margin-bottom: 15px;
+}
+
+/* Mission Section */
+.mission-section {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  color: white;
+  padding: 40px;
+  border-radius: 8px;
+  margin: 30px 0;
+}
+
+.mission-section h2,
+.mission-section h3 {
+  color: white;
+}
+
+/* Testimonials */
+.testimonials {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+  margin: 30px 0;
+}
+
+.testimonial {
+  background: #f8f9fa;
+  padding: 20px;
+  border-radius: 8px;
+  border-left: 4px solid #ff6b6b;
+  font-style: italic;
+}
+
+/* Social Links */
+.social-links a {
+  display: inline-block;
+  margin: 10px 15px 10px 0;
+  padding: 10px 20px;
+  background-color: #667eea;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+  background-color: #5568d3;
+  transform: translateY(-2px);
+}
+
+/* Footer */
+footer {
+  background-color: #1e3c72;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin-top: 50px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 32px;
+  }
+  
+  section {
+    padding: 20px;
+  }
+  
+  .country-button {
+    padding: 10px 20px;
+  }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <div class="logo">🌍 East Africa Jobs Agency</div>
+  </nav>
+</header>
+
+<section class="hero">
+  <h1>Find Your Dream Job Across East Africa</h1>
+  <p>Connect with top employers across Kenya, Tanzania, Uganda, and beyond</p>
+  <button class="cta-button">Apply Now</button>
+</section>
+
+<div class="container">
+
+<!-- About Section -->
+<section>
+  <h2>About Us</h2>
+  <p class="description">
+    We are a licensed recruitment agency specializing in international job placements across East Africa. 
+    Our mission is to connect skilled professionals with reputable employers worldwide while maintaining 
+    transparency and integrity in our services.
+  </p>
+  <p class="description">
+    Since our establishment in 2022, we have successfully assisted over 1,500 candidates secure employment 
+    opportunities abroad.
+  </p>
+  <!-- local illustrative image -->
+  <div style="text-align:center;
+   margin-top:20px;">
+    <img src="images/job application image.jpg" alt="Job application illustration" 
+         style="max-width:100%;
+          height:auto; 
+          border-radius:8px; 
+          box-shadow:0 2px 8px rgba(0,0,0,0.1);" />
+  </div>
+</section>
+
+<!-- Services Section -->
+<section>
+  <h2>Our Services</h2>
+  <ul class="services-list">
+    <li><strong>🌐 International Job Placement</strong><br>Opportunities across East Africa: Kenya, Tanzania, Uganda, and more</li>
+    <li><strong>📝 CV Writing & Review</strong><br>Professional resume optimization for international standards</li>
+    <li><strong>🎤 Interview Preparation</strong><br>Expert coaching to ace your job interviews</li>
+    <li><strong>📋 Work Permit Assistance</strong><br>Complete guidance through visa and permit processes</li>
+    <li><strong>💼 Career Counseling</strong><br>Personalized career guidance and professional development</li>
+  </ul>
+</section>
+
+<!-- Application Process Section -->
+<section>
+  <h2>Application Process</h2>
+  <h3>Requirements by Country</h3>
+
+  <div class="country-section">
+    <button class="country-button">🇰🇪 KENYA - Requirements</button>
+    <ol style="margin-top: 15px; padding-left: 20px;">
+      <li>Submit your full name</li>
+      <li>Identification card (I.D) or Passport</li>
+      <li>Letter of good conduct</li>
+      <li>Email and reachable telephone number</li>
+    </ol>
+    <a href="https://www.myjobquote.co.uk" style="display: inline-block; margin-top: 15px; padding: 10px 20px; background: #667eea; color: white; text-decoration: none; border-radius: 5px;">View Available Jobs in Kenya</a>
+  </div>
+
+  <div class="country-section">
+    <button class="country-button">🇹🇿 TANZANIA - Requirements</button>
+    <ol style="margin-top: 15px; padding-left: 20px;">
+      <li>Submit your full name</li>
+      <li>Identification card (I.D) or Passport</li>
+      <li>Letter of good conduct</li>
+      <li>Email and reachable telephone number</li>
+    </ol>
+    <a href="https://www.myjobquote.co.uk" style="display: inline-block; margin-top: 15px; padding: 10px 20px; background: #667eea; color: white; text-decoration: none; border-radius: 5px;">View Available Jobs in Tanzania</a>
+  </div>
+
+  <div class="country-section">
+    <button class="country-button">🇺🇬 UGANDA - Requirements</button>
+    <ol style="margin-top: 15px; padding-left: 20px;">
+      <li>Submit your full name</li>
+      <li>Identification card (I.D) or Passport</li>
+      <li>Letter of good conduct</li>
+      <li>Email and reachable telephone number</li>
+    </ol>
+    <a href="https://www.myjobquote.co.uk" style="display: inline-block; margin-top: 15px; padding: 10px 20px; background: #667eea; color: white; text-decoration: none; border-radius: 5px;">View Available Jobs in Uganda</a>
+  </div>
+</section>
+
+<!-- Available Positions Section -->
+<section>
+  <h2>Available Job Positions</h2>
+  <div class="table-container">
+    <table>
+      <tr>
+        <th>Country</th>
+        <th>Job Title</th>
+        <th>Salary (USD)</th>
+      </tr>
+      <tr>
+        <td>Kenya</td>
+        <td>Construction Manager</td>
+        <td>$1,200</td>
+      </tr>
+      <tr>
+        <td>Tanzania</td>
+        <td>Electrical Engineer</td>
+        <td>$1,000</td>
+      </tr>
+      <tr>
+        <td>Uganda</td>
+        <td>Mechanical Technician</td>
+        <td>$900</td>
+      </tr>
+    </table>
+  </div>
+</section>
+
+<!-- Application Form Section -->
+<section>
+  <h2>Job Application Form</h2>
+  <form action="application.php" method="post">
+    <label>Full Name:</label>
+    <input type="text" name="fullname" required>
+
+    <label>ID / Passport Number:</label>
+    <input type="text" name="idnumber" required>
+
+    <label>Email:</label>
+    <input type="email" name="email" required>
+
+    <label>Phone Number:</label>
+    <input type="tel" name="phone" required>
+
+    <label>Select Country:</label>
+    <select name="country" required>
+      <option>Select a country...</option>
+      <option>Kenya</option>
+      <option>Tanzania</option>
+      <option>Uganda</option>
+    </select>
+
+    <label>Upload CV (PDF or DOC):</label>
+    <input type="file" name="cv" accept=".pdf,.doc,.docx" required>
+
+    <input type="submit" value="Submit Application">
+  </form>
+</section>
+
+<!-- Working Hours Section -->
+<section>
+  <h2>Operating Hours</h2>
+  <div class="info-cards">
+    <div class="info-card">
+      <h3>Weekdays</h3>
+      <p>🤷🏼‍♀️✍🏼Monday - Friday✍🏼<br><strong>8:00 AM - 5:00 PM</strong></p>
+    </div>
+    <div class="info-card">
+      <h3>Weekends</h3>
+      <p>🤷🏼‍♀️✍🏼Saturday✍🏼<br><strong>9:00 AM - 1:00 PM</strong></p>
+    </div>
+    <div class="info-card">
+      <h3>Sundays</h3>
+      <p><strong>💀🌚Closed⚡</strong></p>
+    </div>
+  </div>
+</section>
+
+<!-- Mission & Vision Section -->
+<section class="mission-section">
+  <h2>Our Mission & Vision</h2>
+  <h3>Our Mission</h3>
+  <p style="margin-bottom: 25px;">
+    To provide reliable, transparent, and efficient job placement services that empower 
+    individuals to achieve career growth and success across East Africa.
+  </p>
+  
+  <h3>Our Vision</h3>
+  <p>
+    To become the leading international recruitment agency in East Africa, recognized for 
+    our commitment to excellence, integrity, and client satisfaction.
+  </p>
+</section>
+
+<!-- Testimonials Section -->
+<section>
+  <h2>Client Testimonials</h2>
+  <div class="testimonials">
+    <div class="testimonial">
+      <p><strong>John M., Kenya</strong></p>
+      <p>"This agency helped me secure a construction job in Dubai within just 3 months. Highly professional!"</p>
+    </div>
+    <div class="testimonial">
+      <p><strong>Asha T., Tanzania</strong></p>
+      <p>"Very professional and transparent process. The team guided me through every step. I highly recommend them."</p>
+    </div>
+    <div class="testimonial">
+      <p><strong>Kamau P., Uganda</strong></p>
+      <p>"Excellent service! They helped me navigate the permit process smoothly. Best decision I made!"</p>
+    </div>
+  </div>
+</section>
+
+<!-- Contact Section -->
+<section>
+  <h2>Contact Us</h2>
+  <div class="info-cards">
+    <div class="info-card">
+      <h3>📍 Location</h3>
+      <p>Nairobi, Ronald Ngara Street<br>Building, Room 233Q<br>Kenya</p>
+    </div>
+    <div class="info-card">
+      <h3>📞💶 Phone</h3>
+      <p><a href="tel:+254712345678" style="color: white; text-decoration: none;">+254 712 345 678</a></p>
+    </div>
+    <div class="info-card">
+      <h3>📧 Email</h3>
+      <p><a href="mailto:info@eajobsagency.com" style="color: white; text-decoration: none;">info@eajobsagency.com</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- Social Media Section -->
+<section>
+  <h2>Follow Us</h2>
+  <div class="social-links">
+    <a href="#">🌐 Facebook</a>
+    <a href="#">📷 Instagram</a>
+    <a href="#">𝕏 Twitter</a>
+    <a href="#">💼 LinkedIn</a>
+  </div>
+</section>
+
+<footer>
+  <p>&copy; 2026 East Africa Jobs Agency. All Rights Reserved.</p>
+  <p style="margin-top: 10px; font-size: 14px;">Connecting Talent with Opportunity Across East Africa</p>
+</footer>
+
+</body>
+</html>
